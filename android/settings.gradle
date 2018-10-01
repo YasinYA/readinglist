@@ -1,0 +1,3 @@
+rootProject.name = 'reading_list'
+
+include ':app'
