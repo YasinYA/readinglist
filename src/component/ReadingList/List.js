@@ -69,7 +69,7 @@ class ReadingList extends Component {
                         <Text style={styles.name}>{item.name}</Text>
                       </Col>
                       <Col>
-                        <Badge style={styles.badge}>
+                        <Badge style={{backgroundColor:item.labelColor, paddingTop: 4}}>
                           <Text style={styles.badgeText}>{item.label}</Text>
                         </Badge>
                       </Col>
@@ -95,10 +95,6 @@ class ReadingList extends Component {
 }
 
 const styles = StyleSheet.create({
-  badge: {
-    backgroundColor: "#f75802",
-    paddingTop: 4
-  },
   badgeText: {
     fontSize: 12
   },

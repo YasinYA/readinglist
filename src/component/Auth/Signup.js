@@ -48,6 +48,8 @@ class SignUp extends Component {
             <CardSection>
               <InputField
                 autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="email-address"
                 onChangeText={email => this.setState({ email })}
                 value={this.state.email}
                 label="Email"
