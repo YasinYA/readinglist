@@ -46,6 +46,12 @@ const AppRoutes = createSwitchNavigator(
 );
 
 export default class App extends Component {
+  constructor() {
+    super();
+    console.ignoredYellowBox = [
+       'Setting a timer'
+    ];
+  }
 
   componentWillMount() {
     firebase.initializeApp({

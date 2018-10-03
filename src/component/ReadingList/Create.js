@@ -27,12 +27,13 @@ class Create extends Component {
   createReadingList() {
     const { currentUser } = firebase.auth();
     const { name, label, deadLine } = this.state;
+    const data = { name, label, deadLine: deadLine.toLocaleString() };
 
     // database call
     firebase.database().ref(`users/${currentUser.uid}/readinglist`)
-    .push({ name, label, deadLine })
+    .push(data)
     .then( result => {
-      this.props.navigation.goBack();
+      this.props.navigation.navigate("Main");
     })
     .catch(err => {
       console.log(err);
@@ -65,7 +66,7 @@ class Create extends Component {
             <CardSection>
               <Button bordered warning block>
                 <DatePicker
-                  defaultDate={new Date(2018, 4, 4)}
+                  defaultDate={new Date()}
                   minimumDate={new Date()}
                   locale={"en"}
                   timeZoneOffsetInMinutes={undefined}

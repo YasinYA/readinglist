@@ -52,7 +52,7 @@ export default class SideBar extends React.Component {
               onPress={this.logout.bind(this)}>
               <Left>
                 <Button transparent>
-                  <Icon name="log-out"  style={styles.icon} />
+                  <Icon name="log-out" style={styles.icon} />
                 </Button>
               </Left>
               <Body>
