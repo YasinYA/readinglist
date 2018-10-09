@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import firebase from "firebase";
 
 import { Loading } from "./Common/";
+import bg from "../../assets/splashScreen.png";
 
 
 export default class AuthLoading extends Component {

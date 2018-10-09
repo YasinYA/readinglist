@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text } from 'react-native';
 import firebase from "firebase";
-import { Content, Form } from "native-base";
+import { Content, Form, Toast } from "native-base";
 import {
   Wrapper,
   InputField,
@@ -18,7 +18,6 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      errorMessage: null
     }
   }
 
@@ -28,7 +27,7 @@ class Login extends Component {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => this.props.navigation.navigate('Main'))
-      .catch(error => this.setState({ errorMessage: error.message }))
+      .catch(error => Toast.show({ text: error.message, type: "danger" }));
   }
 
   render() {
@@ -40,12 +39,6 @@ class Login extends Component {
           flex: 1,
         }}>
           <Form>
-            {
-              this.state.errorMessage &&
-              <Text style={styles.errorText}>
-                {this.state.errorMessage}
-              </Text>
-            }
             <CardSection>
                 <InputField
                   autoCapitalize="none"

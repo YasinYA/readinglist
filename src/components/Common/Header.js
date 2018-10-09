@@ -6,7 +6,7 @@ import { Header, Left, Body, Right, Button, Icon, Title } from "native-base";
 const AppHeader = props => {
   const button = props.backButton ? false : true
   return (
-    <Header style={styles.headerbg} androidStatusBarColor="#f75802">
+    <Header style={styles.headerbg} androidStatusBarColor="#f48a4b">
       {
         button ?
         <Left>
@@ -32,7 +32,7 @@ const AppHeader = props => {
 
 const styles = StyleSheet.create({
   headerbg: {
-    backgroundColor: "#f75802"
+    backgroundColor: "#f48a4b"
   }
 });
 

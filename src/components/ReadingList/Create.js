@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 import firebase from "firebase";
-import { Content, Form, DatePicker, Button } from "native-base";
+import { Content, Form, DatePicker, Button, Toast } from "native-base";
 import { ColorPicker, toHsv, fromHsv } from 'react-native-color-picker';
 import {
   Wrapper,
@@ -38,7 +38,9 @@ class Create extends Component {
       this.props.navigation.navigate("Main");
     })
     .catch(err => {
-      console.log(err);
+      Toast.show({
+        text: err.message
+      });
     });
   }
 

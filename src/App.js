@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { StyleSheet, Platform, Image, Text, View, ScrollView } from 'react-native';
+import SplashScreen from "react-native-splash-screen";
 import { Container } from "native-base";
 
 import firebase from 'firebase';
 import { createStackNavigator, createSwitchNavigator, createDrawerNavigator } from "react-navigation";
 
-import Landing from "./component/Landing";
-import { Login, SignUp } from "./component/Auth/";
-import { Create, Edit } from "./component/ReadingList/";
-import Main from "./component/Main";
-import SideBar from "./component/SideBar";
-import AuthLoading from "./component/AuthLoading";
+import Landing from "./components/Landing";
+import { Login, SignUp } from "./components/Auth/";
+import { Create, Edit } from "./components/ReadingList/";
+import { CreateReadingItem } from "./components/ReadingItem/";
+import Main from "./components/Main";
+import SideBar from "./components/SideBar";
+import AuthLoading from "./components/AuthLoading";
 
 const AuthRoutes = createStackNavigator(
     {
@@ -27,6 +29,7 @@ const MainRoutes = createDrawerNavigator(
   {
     Main,
     Create,
+    CreateReadingItem,
     Edit,
   },
   {
@@ -62,6 +65,10 @@ export default class App extends Component {
       storageBucket: "",
       messagingSenderId: "27200520956"
     });
+  }
+
+  componentDidMount() {
+    SplashScreen.hide();
   }
 
   render() {

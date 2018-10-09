@@ -68,7 +68,7 @@ export default class SideBar extends React.Component {
 
 const styles = StyleSheet.create({
   icon: {
-    color: "#f75802"
+    color: "#f48a4b"
   },
   text: {
     textAlign: "left"

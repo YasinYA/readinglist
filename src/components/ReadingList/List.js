@@ -5,6 +5,7 @@ import firebase from "firebase";
 import { List, ListItem, Left, Right, Icon, Body, Button, Badge } from "native-base";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Loading } from "../Common/";
+import { primaryDateFormat } from "../../utils/";
 
 import {
   Heading
@@ -74,10 +75,10 @@ class ReadingList extends Component {
                         </Badge>
                       </Col>
                     </Grid>
-                    <Text style={styles.deadLine}>Deadline: {item.deadLine}</Text>
+                    <Text style={styles.deadLine}>Deadline: {primaryDateFormat(item.deadLine)}</Text>
                   </Body>
                   <Right>
-                    <Icon type="FontAwesome" name="edit" onPress={() => {
+                    <Icon type="FontAwesome" name="edit" style={{color: "#333"}} onPress={() => {
                       this.props.navigation.navigate("Edit", {item:item})
                     }} />
                   </Right>

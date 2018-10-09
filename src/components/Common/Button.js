@@ -26,7 +26,7 @@ const ButtonWithIcon = props => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#f75802"
+    backgroundColor: "#f48a4b"
   },
   title: {
     color: "#ffffff"
