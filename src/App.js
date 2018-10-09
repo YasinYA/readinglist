@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Platform, Image, Text, View, ScrollView } from 'react-native';
 import SplashScreen from "react-native-splash-screen";
-import { Container } from "native-base";
+import { Container, Root } from "native-base";
 
 import firebase from 'firebase';
 import { createStackNavigator, createSwitchNavigator, createDrawerNavigator } from "react-navigation";
@@ -73,9 +73,11 @@ export default class App extends Component {
 
   render() {
    return (
-      <Container>
-        <AppRoutes />
-      </Container>
+      <Root>
+        <Container>
+          <AppRoutes />
+        </Container>
+      </Root>
     );
   }    
 }

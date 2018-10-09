@@ -27,10 +27,12 @@ class Login extends Component {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => this.props.navigation.navigate('Main'))
-      .catch(error => Toast.show({ text: error.message, type: "danger" }));
+      .catch(error => {
+        Toast.show({ text: error.message, type: "danger", duration: 3000 });
+      });
   }
 
-  render() {
+  render() {  
     return (
       <Wrapper>
         <AppHeader text="Login" navigation={this.props.navigation} />
