@@ -5,6 +5,8 @@ import {
   Wrapper,
   AppHeader
 } from "../Common/";
+import { toastError } from "../../utils/";
+
 
 class CreateReadingItem extends Component {
   constructor() {
@@ -27,11 +29,8 @@ class CreateReadingItem extends Component {
     .then( result => {
       this.props.navigation.navigate("Main");
     })
-    .catch(err => {
-      Toast.show({
-        text: err.message,
-        type: "danger"
-      });
+    .catch(error => {
+      toastError(error.message)
     });
   }
 

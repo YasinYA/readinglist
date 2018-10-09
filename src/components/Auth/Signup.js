@@ -10,6 +10,7 @@ import {
   AppHeader,
   Heading 
 } from "../Common/";
+import { toastError } from "../../utils/";
 
 
 class SignUp extends Component {
@@ -27,7 +28,7 @@ class SignUp extends Component {
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((user) => this.props.navigation.navigate('Main'))
       .catch(error => {
-        Toast.show({ text: error.message, type: "danger" });
+        toastError(error.message);
       });
   }
 

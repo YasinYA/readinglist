@@ -11,7 +11,7 @@ import {
   InputField,
   LocalButton
 } from "../Common/";
-import { primaryDateFormat } from "../../utils/";
+import { primaryDateFormat, toastError } from "../../utils/";
 
 
 class Edit extends Component {
@@ -40,11 +40,8 @@ class Edit extends Component {
     .then( result => {
       this.props.navigation.navigate("Main");
     })
-    .catch(err => {
-      Toast.show({
-        text: err.message,
-        type: "danger"
-      });
+    .catch(error => {
+      toastError(error.message);
     });
   }
 

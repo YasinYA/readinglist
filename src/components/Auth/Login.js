@@ -10,6 +10,7 @@ import {
   AppHeader,
   Heading 
 } from "../Common/";
+import { toastError } from "../../utils/";
 
 
 class Login extends Component {
@@ -28,7 +29,7 @@ class Login extends Component {
       .signInWithEmailAndPassword(email, password)
       .then(() => this.props.navigation.navigate('Main'))
       .catch(error => {
-        Toast.show({ text: error.message, type: "danger", duration: 3000 });
+        toastError(error.message);
       });
   }
 

@@ -11,6 +11,7 @@ import {
   InputField,
   LocalButton
 } from "../Common/";
+import { toastError } from "../../utils/";
 
 
 class Create extends Component {
@@ -37,10 +38,8 @@ class Create extends Component {
     .then( result => {
       this.props.navigation.navigate("Main");
     })
-    .catch(err => {
-      Toast.show({
-        text: err.message
-      });
+    .catch(error => {
+      toastError(error.message);
     });
   }
 
